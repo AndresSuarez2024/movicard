@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estadísticas - Movicard</title>
+  <link rel="stylesheet" href="css/estadisticas.css">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Menú lateral -->
+    <aside class="sidebar">
+        <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+        <nav class="menu">
+            <ul id="menu-items">
+                <li><span class="menu-item" id="inicio-btn">Inicio</span></li>
+                <li><span class="menu-item" id="atencion-btn">Atencion al cliente</span></li>
+            </ul>
+        </nav>
+        <button class="logout-button" onclick="location.href='inicio.html'">Salir</button>
+    </aside>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+      <!-- Encabezado -->
+      <header class="header">
+        <div class="header-icons">
+          <span id="user-name" style="cursor: pointer;"></span>
+          <span aria-label="Perfil" onclick="location.href='perfil.html'" style="cursor: pointer;">👤</span>
+        </div>
+      </header><br>
+
+      <main>
+        <section class="hero">
+          <h1>Estadísticas del Sistema</h1>
+        </section>
+
+        <div class="chart-wrapper">
+          <section class="chart-container">
+            <h2>Movimientos Mensuales</h2>
+            <canvas id="movimientosChart"></canvas>
+          </section>
+
+        <!-- Gráfico de pastel sin "SUSCRIPCIÓN PREMIUM" -->
+        <section class="chart-container">
+          <h2>Tarjetas Vendidas</h2>
+          <canvas id="graficaPie"></canvas>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/estadisticas.js"></script>
+  <footer>
+            <p>MoviCard &copy; 2025. Todos los derechos reservados.</p>
+        </footer>
+</body>
+</html>

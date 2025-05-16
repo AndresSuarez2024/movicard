@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atención al Cliente - MoviCard</title>
+  <link rel="stylesheet" href="css/atencionCliente.css">
+  <script src="js/atencionCliente.js" defer></script>
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Menú lateral -->
+    <aside class="sidebar">
+        <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+        <nav class="menu">
+            <ul id="menu-items"> <!-- Menú oculto inicialmente -->
+                <li><span class="menu-item" id="inicio-btn">Inicio</span></li>
+                <li><span class="menu-item" id="atencion-btn">Atencion al cliente</span></li>
+            </ul>
+        </nav>
+        <button class="logout-button" onclick="location.href='inicio.html'">Salir</button>
+
+    </aside>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+      <!-- Encabezado -->
+      <header class="header">
+        <div class="header-icons">
+          <span id="user-name" style="cursor: pointer;"></span>
+          <span aria-label="Perfil" onclick="location.href='perfil.html'" style="cursor: pointer;">👤</span>
+        </div>
+      </header><br>
+
+      <div class="content">
+        <header class="header">
+          <h1>Atención al cliente</h1>
+        </header>
+
+        <main>
+          <section class="contact-section">
+            <h2>¿En qué podemos ayudarte?</h2>
+
+            <form id="contactForm">
+              <label for="nombre">Nombre completo:</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+
+              <label for="email">Correo electrónico:</label>
+              <input type="email" id="email" name="email" placeholder="Ejemplo: nombre@email.com" required>
+
+              <label for="categoria">Tipo de consulta:</label>
+              <select id="categoria" name="categoria">
+                <option value="consulta">Consulta general</option>
+                <option value="reporte">Reporte de problemas</option>
+                <option value="sugerencia">Sugerencias</option>
+                <option value="otros">Otras consultas</option>
+              </select>
+
+              <label for="mensaje">Mensaje:</label>
+              <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+              <button type="submit" class="btn-enviar">Enviar mensaje</button>
+            </form>
+          </section>
+        </main>
+
+        <footer>
+          <p>MoviCard © 2025. Todos los derechos reservados.</p>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notificación de mensaje enviado -->
+  <div id="notification" class="notification">Mensaje enviado correctamente</div>
+
+</body>
+</html>

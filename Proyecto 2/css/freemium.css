@@ -1,0 +1,156 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Fondo general */
+  }
+  
+  .dashboard {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Menú lateral */
+  .sidebar {
+    width: 150px;
+    background-color: #002147;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; 
+    transition: 0.3s;
+    height: 100vh; /* Altura completa */
+  }
+  
+  .menu-toggle {
+    background-color: #002147;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 30px;  /* Tamaño del ícono */
+    width: 100%;
+  }
+  
+  .menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+  }
+  
+  .menu ul li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #002147;
+  }
+  
+  .menu ul li:hover {
+    background-color: #002147;
+  }
+
+  .logout-button {
+    background-color: #002147;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: auto;
+  }
+  
+  .logout-button:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Cuando el menú se expanda, los elementos se muestran */
+  .sidebar.expanded {
+    width: 200px; /* Expande el menú al hacer clic */
+  }
+  
+  .sidebar.expanded .menu {
+    display: block;
+  }
+
+  /* Contenido principal */
+  .main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    padding: 20px;
+  }
+  
+  /* Encabezado */
+  .header {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center;    /* Centra el contenido verticalmente */
+    padding: 30px;
+    background-color: #002147;
+    color: white;
+    position: relative;      /* Permite posicionar los iconos con precisión */
+  }
+  
+  .header-icons {
+    position: absolute;
+    right: 20px;
+  }
+  
+  .header-icons span {
+    margin-left: 15px;
+    cursor: pointer;
+  }
+  
+  /* Sección Hero */
+  .hero {
+    background-color: #ddd;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+  
+  /* Sección de información */
+  .info-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem auto;
+    max-width: 800px;
+  }
+  
+  .card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 50%;
+  }
+  
+  .button {
+    display: inline-block;
+    background-color: #002147;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1rem;
+  }
+  
+  .button:hover {
+    background-color: #002147;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #002147;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  

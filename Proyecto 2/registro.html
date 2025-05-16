@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/registro.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Registrarse</h2>
+        <form id="registerForm">
+            <div class="input-group">
+                <input type="text" id="name" placeholder="Nombre" required>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="surname" placeholder="Apellido" required>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="dni" placeholder="DNI" required>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="email" placeholder="E-mail" required>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="telefono" placeholder="Teléfono" required>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="direccion" placeholder="Dirección" required>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="numero_bloque" placeholder="Bloque" required>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="numero_piso" placeholder="Piso">
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="codigopostal" placeholder="Código Postal" required>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="ciudad" placeholder="Ciudad" required>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <span class="toggle-password">👁️</span>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="confirm" placeholder="Confirmar Contraseña" required>
+                <span class="toggle-password">👁️</span>
+            </div>
+
+            <div class="checkbox-container">
+                <label>
+                    <input type="checkbox" id="terms">
+                    He leído y acepto los términos y condiciones
+                </label>
+            </div>
+
+            <button type="submit">Crear cuenta</button>
+        </form>
+    </div>
+    <script src="js/registro.js"></script>
+</body>
+</html>

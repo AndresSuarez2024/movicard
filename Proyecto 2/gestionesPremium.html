@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestiones Básicas | Movicard</title>
+    <link rel="stylesheet" href="css/gestionesPremium.css">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Menú lateral -->
+    <aside class="sidebar">
+        <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+        <nav class="menu">
+            <ul id="menu-items"> <!-- Menú oculto inicialmente -->
+                <li><span class="menu-item" id="inicio-btn">Inicio</span></li>
+                <li><span class="menu-item" id="atencion-btn">Atencion al cliente</span></li>
+            </ul>
+        </nav>
+        <button class="logout-button" onclick="location.href='inicio.html'">Salir</button>
+
+    </aside>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="header-icons">
+          <span id="user-name" style="cursor: pointer;"></span>
+          <span aria-label="Perfil" onclick="location.href='perfil.html'" style="cursor: pointer;">👤</span>
+        </div>
+    </header><br>
+
+    <main>
+      <section class="hero">
+          <h1>Gestiones básicas de Movicard</h1>
+      </section>
+
+    <main>
+      <section class="gestiones">
+        <div class="gestion">
+          <h2>Consulta de Picadas</h2>
+          <p>Ver las picadas restantes de su tarjeta.</p>
+          <button onclick="location.href='picadasPremium.html'">Consultar</button>
+        </div>
+
+        <div class="gestion">
+          <h2>Recarga de Tarjeta</h2>
+          <p>Realiza recargas rápidas y seguras.</p>
+          <button onclick="location.href='recargaPremium.html'">Recargar</button>
+        </div>
+
+        <div class="gestion">
+          <h2>Historial de Movimientos</h2>
+          <p>Consulta tus viajes y transacciones.</p>
+          <button onclick="location.href='historialMovimiento.html'">Ver Historial</button>
+        </div>
+
+        <div class="gestion">
+          <h2>Bloqueo/Desbloqueo</h2>
+          <p>Protege tu tarjeta en caso de pérdida.</p>
+          <button onclick="location.href='bloqueoTarjeta.html'">Bloquear/Desbloquear</button>
+        </div>
+      </section>
+    </main><br><br><br>
+
+    <footer>
+      <p>&copy; 2025 Movicard. Todos los derechos reservados.</p>
+    </footer>
+    <script src="js/gestionesPremium.js"></script>
+</body>
+</html>

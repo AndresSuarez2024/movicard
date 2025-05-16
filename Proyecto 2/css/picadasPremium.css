@@ -1,0 +1,213 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+/* Menú lateral */
+.sidebar {
+  width: 150px;
+  background-color: #002147;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  transition: 0.3s;
+  height: 100vh;
+}
+
+.menu-toggle {
+  background-color: #002147;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 30px;
+  width: 100%;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+.sidebar.expanded {
+  width: 200px;
+}
+
+.sidebar.expanded .menu {
+  display: block;
+}
+
+.menu ul li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #002147;
+}
+
+.menu ul li:hover {
+  background-color: #00468b;
+}
+
+.logout-button {
+  background-color: #002147;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: auto;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+}
+
+/* Contenido principal */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* Encabezado */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: #002147;
+  color: white;
+  position: relative;
+}
+
+.header-icons {
+  position: absolute;
+  right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.header-icons span {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.header-icons span:last-child {
+  font-size: 24px;
+}
+
+/* Sección Hero */
+.hero {
+  background-color: #ddd;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+/* Contenedor principal */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+/* Tarjeta */
+.card-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 350px;
+}
+
+.card h3 {
+  color: #002147;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #555;
+  font-size: 1rem;
+}
+
+.picadas {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #002147;
+  margin: 10px 0;
+}
+
+/* Barra de progreso */
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 5px;
+  margin: 10px 0;
+  position: relative;
+}
+
+#progress-fill {
+  width: 70%;
+  height: 100%;
+  background-color: #00468b;
+  border-radius: 5px;
+}
+
+/* Botón Recargar */
+.btn-recargar {
+  background-color: #002147;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.btn-recargar:hover {
+  background-color: #00468b;
+}
+
+/* Información adicional */
+.info-adicional {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.info-adicional p {
+  margin: 5px 0;
+}
+
+/* Footer */
+footer {
+  background-color: #002147;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Ocultar elementos cuando sea necesario */
+.hide {
+  display: none;
+}

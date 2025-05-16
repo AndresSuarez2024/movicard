@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloqueo/Desbloqueo de Tarjeta - MoviCard</title>
+  <link rel="stylesheet" href="css/bloqueoTarjeta.css">
+  <script src="js/bloqueoTarjeta.js" defer></script>
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Menú lateral -->
+    <aside class="sidebar">
+        <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+        <nav class="menu">
+            <ul id="menu-items">
+              <li><span class="menu-item" id="inicio-btn">Inicio</span></li>
+              <li><span class="menu-item" id="picadas-btn">Consultar picadas</span></li>
+              <li><span class="menu-item" id="recargar-btn">Recargar tarjeta</span></li>
+              <li><span class="menu-item" id="historial-btn">Historial de movimientos</span></li>
+              <li><span class="menu-item" id="atencion-btn">Atencion al cliente</span></li>
+            </ul>
+        </nav>
+        <button class="logout-button" onclick="location.href='inicio.html'">Salir</button>
+    </aside>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+      <!-- Encabezado -->
+      <header class="header">
+        <div class="header-icons">
+          <span id="user-name" style="cursor: pointer;"></span>
+          <span aria-label="Perfil" onclick="location.href='perfil.html'" style="cursor: pointer;">👤</span>
+        </div>
+      </header><br>
+
+      <div class="content">
+        <header class="header">
+          <h1>Bloqueo/Desbloqueo tarjeta</h1>
+        </header>
+
+        <!-- Contenedor de contenido (Tarjeta blanca) -->
+        <div class="content-box">
+          <h2>Estado actual de la tarjeta:</h2>
+          <div id="estadoTarjeta" class="estado-activo">
+            Tarjeta activa
+          </div>
+
+          <!-- Representación de tarjeta -->
+          <div class="card-container">
+            <div id="tarjeta" class="tarjeta tarjeta-activa">
+              <div class="tarjeta-header">MoviCard</div>
+              <div class="tarjeta-info">
+                <p><strong>UUID:</strong> <span id="uuidTarjeta">Cargando...</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="opciones">
+            <button id="btnBloquear" class="btn-control">Bloquear Tarjeta</button>
+            <button id="btnDesbloquear" class="btn-control" disabled>Desbloquear Tarjeta</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        MoviCard © 2025. Todos los derechos reservados.
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

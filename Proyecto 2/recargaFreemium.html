@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recarga de Tarjetas - MoviCard</title>
+  <link rel="stylesheet" href="css/recargaFreemium.css">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Menú lateral -->
+    <aside class="sidebar">
+        <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+        <nav class="menu">
+            <ul id="menu-items">
+                <li><span class="menu-item" id="inicio-btn">Inicio</span></li>
+                <li><span class="menu-item" id="consultar-btn">Consultar picadas</span></li>
+                <li><span class="menu-item" id="bloqueo-btn">Bloqueo tarjeta</span></li>
+                <li><span class="menu-item" id="atencion-btn">Atención al cliente</span></li>
+            </ul>
+        </nav>
+        <button class="logout-button" onclick="location.href='inicio.html'">Salir</button>
+
+    </aside>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <header class="header">
+            <div class="header-icons">
+              <span id="user-name" style="cursor: pointer;"></span>
+              <span class="profile-icon" onclick="location.href='perfil.html'">👤</span>
+            </div>
+        </header>
+
+        <main>
+            <!-- Sección para seleccionar el tipo de recarga -->
+            <section class="tipo-recarga-section">
+                <h2>Selecciona el Tipo de Recarga</h2>
+                <div class="options">
+                    <div class="option" id="recarga-10-picadas">
+                        <h3>TENMOVI</h3>
+                        <p>Ideal para viajes esporádicos.</p>
+                        <p><strong>Precio: 13.80€</strong></p>
+                        <button class="select-button" data-type="10-picadas" data-price="10">Pagar</button>
+                    </div>
+
+                    <div class="option" id="recarga-mensual">
+                        <h3>MOVIMES</h3>
+                        <p>Viajes ilimitados por 30 días.</p>
+                        <p><strong>Precio: 24.20€</strong></p>
+                        <button class="select-button" data-type="mensual" data-price="40">Pagar</button>
+                    </div>
+
+                    <div class="option" id="recarga-trimestral">
+                        <h3>TRIMOVI</h3>
+                        <p>Viajes ilimitados por 3 meses.</p>
+                        <p><strong>Precio: 48.40€</strong></p>
+                        <button class="select-button" data-type="trimestral" data-price="100">Pagar</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>MoviCard © 2025. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+    
+    <script src="js/recargaFreemium.js"></script>
+    <script>
+        // Redirige a la página de pago con el tipo de recarga y precio
+        document.querySelectorAll('.select-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const tipoRecarga = this.getAttribute('data-type');
+                const precio = this.getAttribute('data-price');
+                window.location.href = `ingresarTarjetaFreemium.html?tipo=${tipoRecarga}&precio=${precio}`;
+            });
+        });
+    </script>
+</body>
+</html>

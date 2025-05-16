@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información Personal</title>
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Menú lateral -->
+        <aside class="sidebar">
+            <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+            <nav class="menu">
+                <ul id="menu-items">
+                    <li><span class="menu-item" id="inicio-btn">Inicio</span></li>
+                    <li><span class="menu-item" id="atencion-btn">Atención al cliente</span></li>
+                </ul>
+            </nav>
+            <button class="logout-button" onclick="location.href='inicio.html'">Salir</button>
+
+        </aside>
+
+        <!-- Contenido principal -->
+        <div class="main-content">
+            <header class="header">
+                <div class="header-icons">
+                    <span id="user-name" style="cursor: pointer;"></span>
+                    <span aria-label="Perfil" onclick="location.href='perfil.html'" style="cursor: pointer;">👤</span>
+                </div>
+            </header><br>
+
+            <div class="container">
+                <div class="header">
+                    <h2>Información personal</h2>
+                </div><br>
+
+                <form class="personal-info-form">
+                    <p><em>Los campos marcados con * son obligatorios.</em></p>
+
+                    <div class="form-group full-width">
+                        <label for="document-type">Tipo de documento *</label>
+                        <select id="document-type" required>
+                            <option value="dni">DNI</option>
+                        </select>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label for="document-number">Número de documento *</label>
+                            <input type="text" id="document-number" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Nombre *</label>
+                            <input type="text" id="name" required>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label for="first-surname">Primer apellido *</label>
+                            <input type="text" id="first-surname" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="province">Provincia *</label>
+                            <input type="text" id="province" required>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label for="address">Dirección *</label>
+                            <input type="text" id="address" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="block-number">Número de bloque *</label>
+                            <input type="text" id="block-number" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="floor-number">Número de piso *</label>
+                            <input type="text" id="floor-number" required>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label for="postal-code">Código Postal *</label>
+                            <input type="text" id="postal-code" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">Ciudad *</label>
+                            <input type="text" id="city" required>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label for="phone">Teléfono *</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Correo electrónico *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Contraseña *</label>
+                        <div style="display: flex; align-items: center;">
+                            <input type="password" id="password" required>
+                            <button type="button" id="toggle-password" style="margin-left: 10px;">👁️</button>
+                        </div>
+                    </div>
+
+                    <button type="submit">Guardar</button>
+                </form>
+            </div>        
+
+            <footer>
+                <p>MoviCard &copy; 2025. Todos los derechos reservados.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="js/perfil.js"></script>
+</body>
+</html>
