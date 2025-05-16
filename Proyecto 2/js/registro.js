@@ -13,15 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Función para hacer hash SHA-512 con salt fijo (en navegador)
-    async function hashPassword(password) {
-        const fixedSalt = 'M0v¡ç@rD!6%KJABSUIUHGd%$%$·;:ka46851615^`';
-        const encoder = new TextEncoder();
-        const data = encoder.encode(password + fixedSalt);
-        const hashBuffer = await crypto.subtle.digest('SHA-512', data);
-        const hashArray = Array.from(new Uint8Array(hashBuffer));
-        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-    }
-
+    function hashPassword(password) {
+    const fixedSalt = 'M0v¡ç@rD!6%KJABSUIUHGd%$%$·;:ka46851615^`';
+    const combined = password + fixedSalt;
+    const hash = CryptoJS.SHA512(combined);
+    return hash.toString(CryptoJS.enc.Hex);
+}
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
