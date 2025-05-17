@@ -8,7 +8,7 @@ function hashPassword(password) {
 
 // Escuchar el submit del formulario
 document.getElementById('login-form').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Evitar envío del formulario
+    event.preventDefault();
 
     const email = document.getElementById('email').value;
     const passwordInput = document.getElementById('password').value;
@@ -18,16 +18,11 @@ document.getElementById('login-form').addEventListener('submit', async function(
         return;
     }
 
-    // Hashear la contraseña
     const password = await hashPassword(passwordInput);
 
-    // Limpiar localStorage antes de login
-    localStorage.removeItem('nombreUsuario');
-    localStorage.removeItem('suscripcionUsuario');
-    localStorage.removeItem('clienteId');
-    localStorage.removeItem('tarjetaId');
+    // Limpiar localStorage
+    localStorage.clear();
 
-    // Enviar solicitud a API
     fetch('http://34.224.233.49:8000/api/login/', {
         method: 'POST',
         headers: {
@@ -36,37 +31,50 @@ document.getElementById('login-form').addEventListener('submit', async function(
         body: JSON.stringify({ correo: email, password: password })
     })
     .then(response => response.json())
-    .then(data => {
+    .then(async data => {
         if (data.message === 'Login exitoso') {
-            localStorage.setItem('nombreUsuario', data.cliente.nombre);
-            localStorage.setItem('suscripcionUsuario', data.cliente.suscripcion);
-            localStorage.setItem('clienteId', data.cliente.id);
+            const cliente = data.cliente;
+            localStorage.setItem('nombreUsuario', cliente.nombre);
+            localStorage.setItem('suscripcionUsuario', cliente.suscripcion);
+            localStorage.setItem('clienteId', cliente.id);
             localStorage.setItem('usuarioIniciado', 'true');
 
-            const clienteId = data.cliente.id;
+            const clienteId = cliente.id;
 
-            // Nueva petición para obtener la tarjeta del cliente
-            fetch(`http://34.224.233.49:8000/api/tarjetas/cliente/${clienteId}`)
-                .then(res => res.json())
-                .then(tarjeta => {
-                    if (tarjeta.id) {
-                        localStorage.setItem('tarjetaId', tarjeta.id);
-                    } else {
-                        console.warn("No se pudo obtener la tarjeta del cliente.");
-                    }
+            // Paso 1: Consultar si ya tiene tarjeta
+            const tarjetaResponse = await fetch(`http://34.224.233.49:8000/api/tarjetas/cliente/${clienteId}`);
+            const tarjetaData = await tarjetaResponse.json();
 
-                    // Redirigir según la suscripción
-                    const suscripcion = data.cliente.suscripcion;
-                    if (suscripcion === 'PREMIUM') {
-                        window.location.href = "premium.html";
-                    } else {
-                        window.location.href = "freemium.html";
-                    }
-                })
-                .catch(err => {
-                    console.error("Error al obtener la tarjeta del cliente:", err);
-                    alert("Error al obtener la tarjeta del cliente.");
+            if (tarjetaData && tarjetaData.id) {
+                localStorage.setItem('tarjetaId', tarjetaData.id);
+                console.log("✅ Tarjeta ya existente asignada:", tarjetaData.id);
+            } else {
+                // Paso 2: Crear tarjeta si no existe
+                const idSuscripcion = cliente.id_suscripcion || 1; // Ajusta según tu estructura de datos
+                const crearResponse = await fetch(`http://34.224.233.49:8000/post/tarjeta/?id_cliente=${clienteId}&id_suscripcion=${idSuscripcion}`, {
+                    method: "POST"
                 });
+
+                const crearData = await crearResponse.json();
+
+                if (crearResponse.ok && crearData.UUID) {
+                    console.log("✅ Tarjeta creada:", crearData.UUID);
+                    // Reconsultar para obtener la tarjeta completa
+                    const nuevaTarjeta = await fetch(`http://34.224.233.49:8000/api/tarjetas/cliente/${clienteId}`);
+                    const tarjetaFinal = await nuevaTarjeta.json();
+
+                    localStorage.setItem("tarjetaId", tarjetaFinal.id); 
+                } else {
+                    console.warn("⚠️ No se pudo crear la tarjeta:", crearData.detail || crearData);
+                }
+            }
+
+            // Redirigir según tipo de suscripción
+            if (cliente.suscripcion === 'PREMIUM') {
+                window.location.href = "premium.html";
+            } else {
+                window.location.href = "freemium.html";
+            }
 
         } else {
             alert("Credenciales incorrectas");

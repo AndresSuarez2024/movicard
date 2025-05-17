@@ -19,7 +19,7 @@ body {
     flex-direction: column;
     overflow-x: hidden; 
     transition: 0.3s;
-    height: 130vh; /* Altura completa */
+    height: 140vh; /* Altura completa */
 }
 
 .menu-toggle {

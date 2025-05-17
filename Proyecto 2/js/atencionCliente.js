@@ -12,15 +12,13 @@ menuToggle.addEventListener('click', () => {
 document.querySelectorAll('.menu-item').forEach(item => {
     item.addEventListener('click', () => {
         if (item.id === 'inicio-btn') {
-            window.location.href = 'inicio.html';
+            window.location.href = 'freemium.html';
         } else if (item.id === 'recargar-btn') {
             if (!localStorage.getItem('tarjetaRegistrada')) {
                 window.location.href = 'agregarTarjeta.html';
                 return;
             }
             window.location.href = 'recargaTarjeta.html'; 
-        } else if (item.id === 'historial-btn') {
-            window.location.href = 'historialMovimiento.html';
         } else if (item.id === 'bloqueo-btn') {
             window.location.href = 'bloqueoTarjeta.html';
         } else if (item.id === 'atencion-btn') {
