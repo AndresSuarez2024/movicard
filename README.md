@@ -5,6 +5,9 @@
 >Todos los commits de mi aplicación móvil se almacenan en este repositorio github: https://github.com/Christopherjfc/MoviCard_APP.git 
 
 
+### TRELLO
+enlace de nuetro trello: https://trello.com/w/movicard 
+
 
 ### Enlaces Figma
 Aplicación móvil: https://www.figma.com/design/146yct6hxtlOGKaz6MHQnQ/Movicard?node-id=372-245&t=P8tLbSlpJ2nb8urm-1  
@@ -18,3 +21,11 @@ Página web: https://www.figma.com/design/LbUorG4rwyVQGLQ8OuIkZX/Dise%C3%B1o-pag
 - **TENMOVI_MOVICARD**: en este zip se encuentra la lectura de la tarjeta para poder hacer una modificación en la cantidad del ticket del usuario.
 
 - **MoviCard**: En este zip se encuentra toda la aplicación en android studio.
+
+### Archivos Página Web
+
+- **PaginaWeb.zip**
+
+### Archivos ASIX
+
+- **Packet_tracer_MOVICARD.7z**
