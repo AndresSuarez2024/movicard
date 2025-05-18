@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal - MoviCard</title>
+    <link rel="stylesheet" href="css/inicio.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Menú lateral -->
+        <aside class="sidebar">
+            <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+            <nav class="menu">
+                <ul id="menu-items"> <!-- Menú oculto inicialmente -->
+                    <li><span class="menu-item" id="inicio-btn">Inicio</span></li>
+                    <li><span class="menu-item" id="atencion-btn">Atencion al cliente</span></li>
+                </ul>
+            </nav>
+            <button class="logout-button" onclick="cerrarSesion()" style="display: none;">Salir</button>
+        </aside>
+
+        <!-- Contenido principal -->
+        <div class="main-content">
+        <!-- Encabezado -->
+        <header class="header">
+            <div class="header-icons">
+                <span aria-label="Registrarse" onclick="location.href='registro.html'" style="cursor: pointer;">Registrate</span>
+                <span aria-label="Perfil" onclick="location.href='login.html'" style="cursor: pointer;">Iniciar Sesión</span>
+            </div>
+        </header><br>
+
+        <main>
+            <section class="hero">
+                <h1>Bienvenido a MoviCard</h1>
+                <p>Tu solución para la gestión rápida y eficiente de tus tarjetas de transporte.</p>
+            </section>
+        
+            <section class="info-section">
+                <div class="card">
+                    <h2>Gestiones Básicas</h2>
+                    <p>Administra y recarga tus tarjetas de metro de forma sencilla.</p>
+                    <a href="#" id="btn-gestiones" class="button">Ir a Gestiones</a>
+                </div>
+
+                <div class="card">
+                    <h2>Estadísticas</h2>
+                    <p>Consulta datos útiles sobre el uso de tus tarjetas.</p>
+                    <a href="#" id="btn-estadisticas" class="button">Ver Estadísticas</a>
+                </div>
+            </section>
+        </main><br><br><br><br><br><br><br><br><br>
+        <footer>
+            <p>MoviCard &copy; 2025. Todos los derechos reservados.</p>
+        </footer>
+    <script src="js/inicio.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historial de Movimientos - MoviCard</title>
+  <link rel="stylesheet" href="css/historialMovimiento.css">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Menú lateral -->
+    <aside class="sidebar">
+        <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+        <nav class="menu">
+            <ul id="menu-items"> <!-- Menú oculto inicialmente -->
+              <li><span class="menu-item" id="inicio-btn">Inicio</span></li>
+              <li><span class="menu-item" id="picadas-btn">Consultar picadas</span></li>
+              <li><span class="menu-item" id="recargar-btn"> Recargar tarjeta</span></li>
+              <li><span class="menu-item" id="bloqueo-btn">Bloqueo tarjeta</span></li>
+              <li><span class="menu-item" id="atencion-btn">Atencion al cliente</span></li>
+            </ul>
+        </nav>
+        <button class="logout-button" onclick="location.href='inicio.html'">Salir</button>
+
+    </aside>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="header-icons">
+          <span id="user-name" style="cursor: pointer;"></span>
+          <span aria-label="Perfil" onclick="location.href='perfil.html'" style="cursor: pointer;">👤</span>
+        </div>
+    </header><br>
+
+  <div class="content">
+    <header class="header">
+      <h1>Historial de Movimientos</h1>
+    </header>
+
+    <main>
+      <section class="movimientos-section">
+        <h2>Movimientos recientes</h2>
+
+        <div class="filtros">
+          <label for="fechaInicio">Desde:</label>
+          <input type="date" id="fechaInicio">
+          
+          <label for="fechaFin">Hasta:</label>
+          <input type="date" id="fechaFin">
+          
+          <button onclick="filtrarMovimientos()" class="btn-filtrar">Filtrar</button>
+        </div>
+
+        <div class="tabla-movimientos">
+          <table>
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Descripción</th>
+                <th>Monto (€)</th>
+              </tr>
+            </thead>
+            <tbody id="movimientos-body">
+              <!-- Las filas se agregarán dinámicamente -->
+            </tbody>
+          </table>
+        </div><br>
+
+        <button onclick="cargarMovimientos()" class="btn-recargar">Mostrar Todos</button>
+      </section>
+    </main><br><br><br><br>
+
+    <footer>
+      <p>MoviCard © 2025. Todos los derechos reservados.</p>
+    </footer>
+    <script src="js/historialMovimiento.js" defer></script>
+  </div>
+</body>
+</html>

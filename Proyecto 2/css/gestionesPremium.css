@@ -1,0 +1,166 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  .dashboard {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Menú lateral */
+  .sidebar {
+    width: 150px;
+    background-color: #002147;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    transition: 0.3s;
+    height: 100vh;
+  }
+  
+  .menu-toggle {
+    background-color: #002147;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 30px;
+    width: 100%;
+  }
+  
+  .menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+  }
+  
+  .sidebar.expanded {
+    width: 200px; /* Expande el menú al hacer clic */
+  }
+  
+  .sidebar.expanded .menu {
+    display: block;
+  }
+  
+  .menu ul li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #002147;
+  }
+  
+  .menu ul li:hover {
+    background-color: #00468b;
+  }
+
+  .logout-button {
+    background-color: #002147;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: auto;
+  }
+  
+  .logout-button:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Contenido principal */
+  .main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  /* Encabezado */
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: #002147;
+    color: white;
+    position: relative;
+  }
+  
+  .header-icons {
+    position: absolute;
+    right: 20px;
+  }
+  
+  .header-icons span {
+    margin-left: 15px;
+    cursor: pointer;
+  }
+  
+  /* Sección Hero */
+  .hero {
+    background-color: #ddd;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+  
+  /* Sección de gestiones */
+  .gestiones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .gestion {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .gestion:hover {
+    transform: translateY(-5px);
+  }
+  
+  .gestion h2 {
+    color: #002147;
+    margin-bottom: 10px;
+  }
+  
+  .gestion p {
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .gestion button {
+    background-color: #002147;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .gestion button:hover {
+    background-color: #00468b;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #002147;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar Tarjeta de Crédito</title>
+    <link rel="stylesheet" href="css/ingresarTarjetaPremium.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Menú lateral -->
+        <aside class="sidebar">
+            <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+            <nav class="menu">
+                <ul id="menu-items">
+                    <li><span class="menu-item" id="inicio-btn">Inicio</span></li>
+                    <li><span class="menu-item" id="recargar-btn">Recargar tarjeta</span></li>
+                    <li><span class="menu-item" id="historial-btn">Historial de movimientos</span></li>
+                    <li><span class="menu-item" id="bloqueo-btn">Bloqueo tarjeta</span></li>
+                    <li><span class="menu-item" id="atencion-btn">Atención al cliente</span></li>
+                </ul>
+            </nav>
+            <button class="logout-button" onclick="location.href='inicio.html'">Salir</button>
+        </aside>
+    
+        <!-- Contenido principal -->
+        <div class="main-content">
+            <header class="header">
+                <div class="header-icons">
+                    <span id="user-name" style="cursor: pointer;"></span>
+                    <span class="profile-icon" aria-label="Perfil" onclick="location.href='perfil.html'">👤</span>
+                </div>
+            </header>
+    
+            <div class="container">
+                <h2>Ingresa tu Tarjeta de Crédito</h2>
+
+                <!-- Formulario para ingresar tarjeta -->
+                <form id="paymentForm">
+                    <label for="cardNumber">Número de Tarjeta</label>
+                    <input type="text" id="cardNumber" maxlength="19" placeholder="XXXX XXXX XXXX XXXX" required>
+
+                    <label for="cardHolder">Titular</label>
+                    <input type="text" id="cardHolder" placeholder="Nombre del titular" required>
+
+                    <div class="flex-row">
+                        <div>
+                            <label for="expiryDate">Vencimiento</label>
+                            <input type="text" id="expiryDate" maxlength="5" placeholder="MM/AA" required>
+                        </div>
+                        <div>
+                            <label for="cvv">CVV</label>
+                            <input type="password" id="cvv" maxlength="3" placeholder="XXX">
+                        </div>
+                        <input type="hidden" id="clienteId" value="">
+                    </div>
+                    <button type="submit" id="pay" class="pay-button">Pagar</button>
+                </form><br><br><br>
+                
+            </div><br><br><br><br><br><br><br><br><br><br><br>
+            <footer>
+                <p>MoviCard © 2025. Todos los derechos reservados.</p>
+            </footer>
+            <script src="js/ingresarTarjetaPremium.js"></script>
+        </div>
+    </body>
+</html>

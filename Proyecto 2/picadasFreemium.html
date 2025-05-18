@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Picadas - MoviCard</title>
+    <link rel="stylesheet" href="css/picadasFreemium.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Menú lateral -->
+        <aside class="sidebar">
+            <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+            <nav class="menu">
+                <ul id="menu-items">
+                    <li><span class="menu-item" id="inicio-btn">Inicio</span></li>
+                    <li><span class="menu-item" id="recargar-btn">Recargar tarjeta</span></li>
+                    <li><span class="menu-item" id="bloqueo-btn">Bloqueo tarjeta</span></li>
+                    <li><span class="menu-item" id="atencion-btn">Atencion al cliente</span></li>
+                </ul>
+            </nav>
+            <button class="logout-button" onclick="location.href='inicio.html'">Salir</button>
+        </aside>
+
+        <!-- Contenido principal -->
+        <div class="main-content">
+            <!-- Encabezado -->
+            <header class="header">
+                <div class="header-icons">
+                    <span id="user-name" style="cursor: pointer;"></span>
+                    <span aria-label="Perfil" onclick="location.href='perfil.html'" style="cursor: pointer;">👤</span>
+                </div>
+            </header><br>
+
+            <main>
+                <section class="hero">
+                    <h1>Consulta de las picadas</h1>
+                </section>
+
+                <main class="main-container">
+                    <div class="card-container">
+                        <div class="card">
+                            <h3 id="tipoTicket">Cargando tipo de ticket...</h3>
+                            <p class="subtitle">Picadas disponibles:</p>
+                            <p class="picadas" id="saldoPicadas">0 usos restantes</p>
+                            <div class="progress-bar">
+                                <div id="progress-fill"></div>
+                            </div>
+                            <button id="recargarBtn" class="btn-recargar">Recargar ahora</button>
+                        </div>
+                        
+                        <div class="info-adicional">
+                            <p><strong>Último uso:</strong> <span id="fechaInicio">Cargando...</span></p>
+                            <p><strong>Expira el:</strong> <span id="fechaExpiracion">Cargando...</span></p>                            
+                        </div>
+                    </div>
+                </main>
+            </main>
+
+            <footer>
+                <p>MoviCard © 2025. Todos los derechos reservados.</p>
+            </footer>
+
+            <script src="js/picadasFreemium.js"></script>
+        </div>
+    </div>
+</body>
+</html>
